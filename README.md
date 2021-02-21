@@ -1,0 +1,1 @@
+This is a collection of my codewars coding challenge solutions. My goal to update it daily with at least one solution. Thanks for visiting!   
