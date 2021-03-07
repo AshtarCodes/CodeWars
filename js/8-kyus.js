@@ -48,3 +48,32 @@ function monkeyCount(n) {
       }
       return numArr;
 };
+
+// Each dragon needs two bullets for our hero to beat them. 
+function hero(bullets, dragons){
+  //Get Coding!
+    return (dragons * 2) / bullets <= 1;  
+};
+
+//greeting
+function greet(name){
+  //your code here
+  return `Hello, ${name} how are you doing today?`
+};
+
+// reverse words
+function reverseWords(str){
+  return str.split(' ').reverse().join(' '); // reverse those words
+};
+
+//return sum of two arrays 
+function arrayPlusArray(arr1, arr2) {
+  return arr1.concat(arr2).reduce((acc,c) => acc + c); 
+}
+
+// did i get a bonus?
+function bonusTime(salary, bonus) {
+  // your code here
+    let checkBonus = (bonus) ? salary*10 : salary;
+    return `\u00A3${checkBonus}`;
+}
