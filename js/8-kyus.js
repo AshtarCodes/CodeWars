@@ -77,3 +77,38 @@ function bonusTime(salary, bonus) {
     let checkBonus = (bonus) ? salary*10 : salary;
     return `\u00A3${checkBonus}`;
 }
+
+// If name begins with R, then plays banjo
+function areYouPlayingBanjo(name) {
+  // Implement me
+  return (name.charAt(0).toUpperCase() === 'R') ? `${name} plays banjo` : `${name} does not play banjo`;
+}
+
+//average of nums in an array
+function find_average(array) {
+  // your code here
+  return (array.length > 0) ? array.reduce((a,c) => a + c, 0) / array.length : 0
+};
+
+// convert bool into string
+function booleanToString(b){
+  //your code here
+  return (b) ? 'true' : 'false';
+}
+
+
+// nums < 5 are replaced with 0, nums >= 5 are replaced with 1
+function fakeBin(x){
+  return x.split('').map(n => n < 5 ? '0' : '1').join('');
+}
+
+// reverse sequence
+const reverseSeq = n => {
+  let list = [];
+  for (let i = n; i > 0; i--){
+    list.push(i)
+  }
+  return list;
+};
+
+
