@@ -111,4 +111,49 @@ const reverseSeq = n => {
   return list;
 };
 
+// reduce but grow
+function grow(x){
+  let product = 1;
+  for (let n of x){
+    product *= n
+  }
+  return product;
+};
+// solution 2
+function grow(x){
+  return x.reduce((acc,c)=>acc * c);
+}
+
+// Does array a include value x?
+function check(a, x) {
+  // your code here
+  return a.includes(x);
+}
+
+function DNAtoRNA(dna) {
+  // create a function which returns an RNA sequence from the given DNA sequence
+  let arr = dna.toUpperCase().split(''); // [g,c,a,t]
+  let res = []
+  for (let el of arr){
+    if (el === 'T'){
+      res.push('U')
+    } else {
+      res.push(el)
+    }    
+  }
+  return res.join('');  
+}
+// solution 2
+function DNAtoRNA(dna) {
+  // create a function which returns an RNA sequence from the given DNA sequence
+  for (let char of dna){
+    dna = dna.replace('T','U')
+  }  
+  return dna;
+}
+//solution 3
+function DNAtoRNA(dna) {
+  // create a function which returns an RNA sequence from the given DNA sequence
+  return dna.split('').map(str => str.replace('T','U')).join('');
+}
 
