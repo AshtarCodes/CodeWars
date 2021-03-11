@@ -197,3 +197,163 @@ function getPlanetName(id){
   }  
   return name;
 };
+
+//Jenny's secret message
+function greet(name){
+  
+  if(name === "Johnny"){
+    return "Hello, my love!";
+    };
+    return "Hello, " + name + "!";
+};
+
+function even_or_odd(number) {
+  if(number % 2 === 0){
+    return 'Even'
+  };
+  return 'Odd'
+};
+
+function makeNegative(num) {
+  return -Math.abs(num)
+};
+
+function positiveSum(arr) {
+  return arr.map(item => item)
+     .filter(item => {
+       if (item === Math.abs(item)){return item}
+     })
+     .reduce((acc, item) => acc + item, 0);
+}
+
+function boolToWord( bool ){
+  return (bool) ? 'Yes' : 'No'
+};
+
+function arrayMadness(a, b) {
+  let squareSumA = a.map(n => n = Math.pow(n, 2)).reduce((a,b) => a + b);
+  let cubedSumB = b.map(n => n = Math.pow(n, 3)).reduce((a,b) => a + b);
+  return (squareSumA > cubedSumB) ? true : false;
+};
+
+function greet(language) {
+  let lowerCaseLang = language.toLowerCase();
+  let languageGreeting = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom',
+    estonian: 'Tere tulemast',
+    finnish: 'Tervetuloa',
+    flemish: 'Welgekomen',
+    french: 'Bienvenue',
+    german: 'Willkommen',
+    irish: 'Failte',
+    italian: 'Benvenuto',
+    latvian: 'Gaidits',
+    lithuanian: 'Laukiamas',
+    polish: 'Witamy',
+    spanish: 'Bienvenido',
+    swedish: 'Valkommen',
+    welsh: 'Croeso'
+  };
+  if (languageGreeting[lowerCaseLang] !== undefined){
+    return languageGreeting[lowerCaseLang]
+  } else if (languageGreeting[lowerCaseLang] == undefined){
+    return languageGreeting.english;
+  };
+};
+
+class Ball {
+  constructor(ballType = 'regular') {
+    this.ballType = ballType;
+  }
+};
+
+function opposite(number) {
+  return (number === Math.abs(number)) ? -Math.abs(number) : Math.abs(number)
+};
+
+function howManydays(month){
+  var days;
+  switch (month){
+    case 2:
+      days = 28
+      break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+      days = 30
+      break;
+    default:
+      days = 31
+  }
+  return days;
+};
+
+function helloWorld(){
+  var str = "Hello World!"
+  console.log(str)
+};
+
+function getLength(arr){
+  
+  return arr.length
+}
+function getFirst(arr){
+  //return the first element of arr
+  return arr[0]
+}
+function getLast(arr){
+  //return the last element of arr
+  return arr[arr.length-1]
+}
+function pushElement(arr){
+  var el=1;
+  //push el to arr
+  arr.push(el)
+  return arr
+}
+function popElement(arr){
+  //pop an element from arr
+  arr.pop()
+  return arr
+}
+
+function animal(obj){
+  return `This ${obj.color} ${obj.name} has ${obj.legs} legs.`
+}
+
+function trueOrFalse(val){
+  if (!val)    return 'false';             
+  else return 'true';
+}
+
+function saleHotdogs(n){
+  let price = 0;
+  return (n<5) ? price = n * 100 : (n>=10) ? price = n * 90 : price = n*95;
+};
+
+function pipeFix(numbers){
+  let max = Math.max(...numbers);
+  let min = Math.min(...numbers);
+  let result = numbers;
+  for (let i = 0; i < ((max-min)+ 1); i++){
+    if(numbers[i] !== (min + i)){
+      result.splice(i, 0, (min + i) );
+    };
+  };
+  return result;
+};
+
+function warnTheSheep(queue) {
+
+  for (let i = queue.length - 1, j = 1; i >= 0; i--, j++){
+    if (queue[queue.length - 1] === 'wolf'){
+      return 'Pls go away and stop eating my sheep';
+    } else if (queue[i] === 'wolf') {
+      return `Oi! Sheep number ${j-1}! You are about to be eaten by a wolf!`
+    };    
+  };  
+};
