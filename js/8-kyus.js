@@ -357,3 +357,13 @@ function warnTheSheep(queue) {
     };    
   };  
 };
+
+// array of string. I need to dissect each string. 
+
+function points(games) {
+  // your code here
+  return games.map(match => {
+    let [x,y] = match.split(':')
+    return (x > y) ? 3 : (x < y) ? 0 : 1;
+  }).reduce((acc,c) => acc + c,0)
+}
