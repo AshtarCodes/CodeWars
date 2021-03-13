@@ -367,3 +367,39 @@ function points(games) {
     return (x > y) ? 3 : (x < y) ? 0 : 1;
   }).reduce((acc,c) => acc + c,0)
 }
+
+// will you make it to the pump?
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  // TODO
+  return (fuelLeft >= (distanceToPump / mpg)); 
+};
+
+// volume of cuboid
+class Kata {
+  static getVolumeOfCuboid(length, width, height) {
+    return length*width*height;
+  }
+}
+
+// how many times will i rewrite this paperwork?
+function paperwork(n, m) {
+  if (n <= 0 || m <= 0){
+    return 0;
+  } 
+  return n * m;  
+}
+
+//make uppercase 
+function makeUpperCase(str) {
+  return str.toUpperCase();
+}
+
+//
+function sumArray(array) {
+  if (Array.isArray(array) || array.length > 1){
+  let array = array.sort((a,b)=> a-b)
+  } else {
+    return 0;
+  }
+  return array.slice(1,-1).reduce((a,i) => a + i);
+}
