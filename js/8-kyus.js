@@ -403,3 +403,28 @@ function sumArray(array) {
   }
   return array.slice(1,-1).reduce((a,i) => a + i);
 }
+
+function betterThanAverage(classPoints, yourPoints) {
+  // Your code here
+  let average = Math.round(classPoints.reduce((a,i)=> a + i, 0) / classPoints.length);
+  return yourPoints > average;
+}
+
+function rentalCarCost(day) {
+  // Your solution here
+  let stdRate = 40;
+  let threeDayDiscount = -20;
+  let sevenDayDiscount = -50;
+  return (day >= 7) ? day * stdRate + sevenDayDiscount : (day>=3) ? day * stdRate + threeDayDiscount : day * stdRate;
+}
+
+//Create a function with two arguments that will return an array of the first (n) multiples of (x).
+function countBy(x, n) {
+  var z = Array(n).fill(0);
+  return z.map((el,i) => x * n--).reverse();
+}
+//solution 2
+function countBy(x, n) {
+  var z = Array(n).fill(0);
+  return z.map((el,i) => x * (i + 1));
+}
