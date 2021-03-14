@@ -428,3 +428,7 @@ function countBy(x, n) {
   var z = Array(n).fill(0);
   return z.map((el,i) => x * (i + 1));
 }
+//
+function setAlarm(employed, vacation){
+  return employed && !vacation;
+}
