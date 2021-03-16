@@ -432,3 +432,8 @@ function countBy(x, n) {
 function setAlarm(employed, vacation){
   return employed && !vacation;
 }
+
+//multiply two nums
+function multiply(n1, n2){
+  return n1 * n2;
+}
