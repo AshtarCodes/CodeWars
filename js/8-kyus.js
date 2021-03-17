@@ -441,4 +441,37 @@ function multiply(n1, n2){
 //sum string and number integers, return a number 
 function sumMix(x){
   return x.reduce((a,c) => a + Number(c), 0);
- }
+}
+
+//BMI 
+function bmi(weight, height) {
+  let index = weight/height ** 2;
+  if (index <= 18.5) return 'Underweight';
+  if (index <= 25) return 'Normal';
+  if (index <= 30) return 'Overweight';
+  if (index > 30) return 'Obese';
+}
+//return first non-consecutive number
+function firstNonConsecutive (arr) {
+  if (!Array.isArray(arr) || arr.length < 2){return null};
+  let res = []
+  for (let i = 0; i < arr.length; i++){
+    const el = arr[i];
+    if (el === arr[0]) continue;
+    if (el !== ++arr[i-1]){
+      res.push(el);
+    }
+  }
+  return (res.length == 1) ? res[0] : null;
+}
+
+//
+function getGrade (s1, s2, s3) {
+  // Code here
+  let avg = Number(s1+s2+s3) / 3;
+  if (avg < 60) return "F";
+  else if (avg < 70) return 'D';
+  else if (avg < 80) return 'C';
+  else if (avg < 90) return 'B';
+  else if (avg >= 90 ) return 'A';
+}
