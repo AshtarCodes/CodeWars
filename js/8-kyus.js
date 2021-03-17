@@ -437,3 +437,8 @@ function setAlarm(employed, vacation){
 function multiply(n1, n2){
   return n1 * n2;
 }
+
+//sum string and number integers, return a number 
+function sumMix(x){
+  return x.reduce((a,c) => a + Number(c), 0);
+ }
