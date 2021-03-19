@@ -475,3 +475,13 @@ function getGrade (s1, s2, s3) {
   else if (avg < 90) return 'B';
   else if (avg >= 90 ) return 'A';
 }
+
+//
+function simpleMultiplication(number) {
+  // your code........
+  if (number % 2 === 0){
+    return number * 8;
+  } else {
+    return number * 9;
+  }
+}
