@@ -496,3 +496,9 @@ function expressionMatter(a, b, c) {
   let six = a + b + c
   return Math.max(...[one, two, three, four, five, six]);
 }
+
+function howMuchILoveYou(nbPetals) {
+  // your code
+  let choices = ['I love you', 'a little', 'a lot', 'passionately', 'madly', 'not at all']
+  return choices[(nbPetals-1) % choices.length];
+}
