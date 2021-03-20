@@ -485,3 +485,13 @@ function simpleMultiplication(number) {
     return number * 9;
   }
 }
+
+// Expressions Matter
+function expressionMatter(a, b, c) {
+  let one = a + b * c
+  let two = (a + b) * c
+  let three = a * b + c
+  let four = a * b * c
+  let five = a * (b + c)
+  return Math.max(...[one, two, three, four, five]);
+}
