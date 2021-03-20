@@ -493,5 +493,6 @@ function expressionMatter(a, b, c) {
   let three = a * b + c
   let four = a * b * c
   let five = a * (b + c)
-  return Math.max(...[one, two, three, four, five]);
+  let six = a + b + c
+  return Math.max(...[one, two, three, four, five, six]);
 }
