@@ -506,3 +506,37 @@ function howMuchILoveYou(nbPetals) {
 function stringToArray(string){
   return string.split(' ');
 }
+
+//random color ghost
+var Ghost = function() {
+  this.color = generateColor();
+};
+function generateColor () {
+  let generate = Math.random();
+  switch (true){
+    case (generate < 0.25):
+        return 'yellow';
+        break;
+    case (generate < 0.5):
+        return 'white';
+        break;
+    case (generate < 0.75):
+        return 'purple';
+        break;
+    default:
+        return 'red';
+  };
+};
+const pacmanEat = new Ghost();
+
+//Classy classes
+class Person {
+  constructor(name, age) {
+    this._name = String(name);
+    this._age = age;
+  }
+  get info (){
+    return `${this._name}s age is ${this._age}`;
+  }
+}
+
