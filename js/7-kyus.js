@@ -117,3 +117,13 @@ function alienLanguage(str){
     return result.join(' ') // turn arr to str
 }
 
+//return only integers
+function sum(){
+    let sumArr = [...arguments]
+    return sumArr.reduce((acc,c) => {
+      if (Number.isInteger(c)){
+        acc += c;
+      }
+      return acc;
+    },0)
+  }
