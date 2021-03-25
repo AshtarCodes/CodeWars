@@ -540,3 +540,32 @@ class Person {
   }
 }
 
+// Alternating case'
+// P: strings R: alternate case strings, unaffected non-alphabetical chars ('123'), E: heLLo -> HEllO, 123 -> 123
+// Ps: store in new variable, access with charAt. for loop. conditional check if string, and compare case. Convert and push to new variable when it doesn't match.
+String.prototype.toAlternatingCase = function () {
+  let words = this.split(' ') // words
+  let result = [];
+  let newWord = '';
+  for (let word of words){
+    for (let char of word){
+      if (typeof char === 'string' && (!Number(char))){ // string and not a number
+        if ( char === char.toUpperCase() ){
+          newWord += char.toLowerCase() // U -> u
+        } else if ( char === char.toLowerCase() ){
+          newWord += char.toUpperCase() // l -> L
+        }
+      } else { // if non-alphabetical char '123'
+          newWord += char
+      }
+    }
+    result.push(newWord)
+    newWord = ''
+  }
+  return result.join(' ');
+}
+//solution 2
+String.prototype.toAlternatingCase = function () {
+  // Define your method here :)
+  return this.split('').map(el => el === el.toUpperCase() ? el.toLowerCase() : el.toUpperCase()).join('')
+}
