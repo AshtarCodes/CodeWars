@@ -591,3 +591,18 @@ const rps = (p1, p2) => {
   return 'Player 2 won!';
   }
 };
+
+// Switch head and tail
+function fixTheMeerkat(arr) {
+  return arr.reverse();
+}
+
+//Find numbers which are divisible by given number
+function divisibleBy(numbers, divisor){
+  return numbers.filter(n => n % divisor === 0)
+}
+
+// square a number
+function square (n) {
+  return Math.pow(n,2)
+}
