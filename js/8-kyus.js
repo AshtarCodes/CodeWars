@@ -606,3 +606,15 @@ function divisibleBy(numbers, divisor){
 function square (n) {
   return Math.pow(n,2)
 }
+
+// Short Long Short
+// conditionals 
+// 
+function solution(a, b){
+  // your code here
+  if (a.length > b.length){
+    return String(b + a + b);
+  } else if (a.length < b.length) {
+    return String(a + b + a)
+  }
+}
