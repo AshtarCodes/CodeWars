@@ -618,3 +618,9 @@ function solution(a, b){
     return String(a + b + a)
   }
 }
+
+//Will there be enough space?
+function enough(cap, on, wait) {
+  // your code here
+  return ((on + wait) < cap) ? 0 : (on + wait) - cap;
+}
