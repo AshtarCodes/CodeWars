@@ -624,3 +624,8 @@ function enough(cap, on, wait) {
   // your code here
   return ((on + wait) < cap) ? 0 : (on + wait) - cap;
 }
+
+//Can we divide it?
+function isDivideBy(number, a, b) {
+  return (number % a === 0 && number % b === 0);
+}
