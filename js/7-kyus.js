@@ -127,3 +127,8 @@ function sum(){
       return acc;
     },0)
   }
+
+  //Square every digit and concat
+  function squareDigits(num){
+    return Number(String(num).split('').map(n => n * n).join(''))    
+  }
