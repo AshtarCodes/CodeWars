@@ -633,3 +633,8 @@ function isDivideBy(number, a, b) {
 function removeExclamationMarks(s) {
   return s.split('').map(c => (c !== '!') ? c : '').join('');
 }
+
+function lovefunc(f1, f2){
+  // moment of truth
+  return ((f1 + f2) % 2 === 1);
+}
