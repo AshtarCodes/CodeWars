@@ -629,3 +629,7 @@ function enough(cap, on, wait) {
 function isDivideBy(number, a, b) {
   return (number % a === 0 && number % b === 0);
 }
+
+function removeExclamationMarks(s) {
+  return s.split('').map(c => (c !== '!') ? c : '').join('');
+}
