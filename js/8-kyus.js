@@ -638,3 +638,14 @@ function lovefunc(f1, f2){
   // moment of truth
   return ((f1 + f2) % 2 === 1);
 }
+
+// P: lowercase strings R: boolean
+// E: blue bird , blueberry donut ->  returns true
+// Ps: slice and check
+function feast(beast, dish) {
+  let bStart = beast.slice(0,1),
+      bEnd = beast.slice(-1);
+  let dStart = dish.slice(0,1),
+      dEnd = dish.slice(-1);
+  return (bStart === dStart && bEnd === dEnd);
+}
