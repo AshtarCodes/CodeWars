@@ -649,3 +649,9 @@ function feast(beast, dish) {
       dEnd = dish.slice(-1);
   return (bStart === dStart && bEnd === dEnd);
 }
+
+//P: arr of pos nums, and a non-negative number N
+// R: number, E: N = 2, arr = [0,1,2,3] -> 2 * arr[2] returns 4. if N not in array, then returns -1
+function index(arr, n){
+  return (arr[n]) ? Math.pow(arr[n], n) : -1;
+}
