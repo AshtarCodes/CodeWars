@@ -650,8 +650,20 @@ function feast(beast, dish) {
   return (bStart === dStart && bEnd === dEnd);
 }
 
+// To the Power of 
 //P: arr of pos nums, and a non-negative number N
 // R: number, E: N = 2, arr = [0,1,2,3] -> 2 * arr[2] returns 4. if N not in array, then returns -1
 function index(arr, n){
   return (arr[n]) ? Math.pow(arr[n], n) : -1;
+}
+
+// Removing elements
+function removeEveryOther(arr){
+  let newArr = []
+  for (let i = 0; i < arr.length; i++){
+    if (i % 2 === 0){
+      newArr.push(arr[i])
+    }
+  }
+  return newArr;
 }
