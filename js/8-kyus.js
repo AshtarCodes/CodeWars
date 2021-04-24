@@ -667,3 +667,21 @@ function removeEveryOther(arr){
   }
   return newArr;
 }
+// P: + integer. R: string, E: size = 6, return '101010'
+// Ps: iterate 'size' times, check for last digit, and concat either 0 or 1 
+function stringy(size) {
+  let str = '1'
+  if (size == 0){
+    return str;
+  } else {
+    for (let i = 0; i < size; i++) {
+      if (str.charAt(str.length-1) == '1'){
+        str = str + '0'
+      } else if (str.charAt(str.length-1) == '0'){
+        str = str + '1'
+      }
+    }
+  }
+
+  return String(str);
+}
