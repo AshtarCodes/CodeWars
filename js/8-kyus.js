@@ -667,6 +667,8 @@ function removeEveryOther(arr){
   }
   return newArr;
 }
+
+// Stringy string
 // P: + integer. R: string, E: size = 6, return '101010'
 // Ps: iterate 'size' times, check for last digit, and concat either 0 or 1 
 function stringy(size) {
@@ -682,6 +684,9 @@ function stringy(size) {
       }
     }
   }
-
   return String(str);
 }
+
+// Number toString
+var a = Number(123).toString();
+
