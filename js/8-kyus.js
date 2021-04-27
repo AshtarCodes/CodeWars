@@ -712,3 +712,23 @@ function formatMoney(amount){
   // your formatting code here
   return String('$' + Number(amount).toFixed(2));
 }
+
+// well of ideas
+function well(x){
+  let numOfGoodIdeas
+  // if no good ideas
+  if(!x.includes('good')){
+    return 'Fail!';
+  } else {
+    numOfGoodIdeas = x.filter(x => x === 'good').length;    
+    return numOfGoodIdeas > 2 ? 'I smell a series!' : 'Publish!';
+  }
+}
+
+function capitalizeWord(word) {
+  return word[0].toUpperCase() + word.slice(1);
+}
+
+function mouthSize(animal) {
+  return animal.toLowerCase() == 'alligator' ? 'small' : 'wide';
+}
