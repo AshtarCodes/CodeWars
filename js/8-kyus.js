@@ -733,6 +733,7 @@ function mouthSize(animal) {
   return animal.toLowerCase() == 'alligator' ? 'small' : 'wide';
 }
 
+//Filling an array
 function arr (n = null) {
   if (n === null) return [];
   const array = Array(n).fill(0);
