@@ -705,3 +705,10 @@ function twoSort(s) {
   return String(result.slice(0,-3))
 }
 
+// P: number R: string in format '$nn.nn' or '$n.nn'
+// E: 9 -> $9.00
+// Ps: num.toFixed(2), then add $,  
+function formatMoney(amount){
+  // your formatting code here
+  return String('$' + Number(amount).toFixed(2));
+}
