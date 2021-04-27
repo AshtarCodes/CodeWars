@@ -690,3 +690,7 @@ function stringy(size) {
 // Number toString
 var a = Number(123).toString();
 
+// Cockroach speed conversion
+function cockroachSpeed(s) {
+  return Math.floor(s * 27.7778);  
+}
