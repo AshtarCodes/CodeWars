@@ -694,3 +694,14 @@ var a = Number(123).toString();
 function cockroachSpeed(s) {
   return Math.floor(s * 27.7778);  
 }
+
+// P: arr R: string w/ *** b/w each char
+// E: ['hey', 'there', 'aaron'] -> a***a***r***o***n***
+// Ps: Sort array alpha (localeCompare ?), then store first el in var, then loop over each char and add char + *** to a new var.   
+function twoSort(s) {
+  let sort = s.sort((a,b) => b > a ? 1 : -1)
+  let str = sort[0]
+  let result = str.split('').map(x => x + '***').join('')
+  return String(result.slice(0,-3))
+}
+
