@@ -732,3 +732,9 @@ function capitalizeWord(word) {
 function mouthSize(animal) {
   return animal.toLowerCase() == 'alligator' ? 'small' : 'wide';
 }
+
+function arr (n = null) {
+  if (n === null) return [];
+  const array = Array(n).fill(0);
+  return array.map((el, i) => --n).reverse()
+}
