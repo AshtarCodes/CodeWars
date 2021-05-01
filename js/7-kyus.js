@@ -132,3 +132,8 @@ function sum(){
   function squareDigits(num){
     return Number(String(num).split('').map(n => n * n).join(''))    
   }
+
+  function oddOrEven(array) {
+    if (Array.isArray(array) && (array[0] === 0 || array[0] == null)) return 'even';
+    return array.reduce((acc, n) => acc + n, 0) % 2 === 0 ? 'even' : 'odd';
+  }
