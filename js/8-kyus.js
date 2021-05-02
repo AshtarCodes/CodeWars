@@ -739,3 +739,17 @@ function arr (n = null) {
   const array = Array(n).fill(0);
   return array.map((el, i) => --n).reverse()
 }
+
+//P: array of strings. R: filtered array of non-matches
+// E: Ps: loop through, if array.includes is false, then push to new arr
+function gooseFilter (birds) {
+  const geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  let filtered = []
+  for (let bird of birds) {
+    if (!geese.includes(bird)){
+      filtered.push(bird)
+    }
+  }
+  // return an array containing all of the strings in the input array except those that match strings in geese
+  return filtered;
+};
