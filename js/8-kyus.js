@@ -753,3 +753,7 @@ function gooseFilter (birds) {
   // return an array containing all of the strings in the input array except those that match strings in geese
   return filtered;
 };
+
+function superSize(num){
+  return Number(String(num).split('').sort((a,b) => b - a).join(''));
+}
