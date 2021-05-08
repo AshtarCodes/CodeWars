@@ -757,3 +757,17 @@ function gooseFilter (birds) {
 function superSize(num){
   return Number(String(num).split('').sort((a,b) => b - a).join(''));
 }
+
+//vowel remover
+// remove all lowercase vowels in a given string
+function shortcut(string){
+  const vowels = ['a','e','i', 'o', 'u'];
+  let result;
+  for (let char of string){
+    if (vowels.includes(char)){
+      continue;
+    }
+    result += char;    
+  }
+  return result;
+}
