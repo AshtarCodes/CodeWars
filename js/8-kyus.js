@@ -758,6 +758,7 @@ function superSize(num){
   return Number(String(num).split('').sort((a,b) => b - a).join(''));
 }
 
+<<<<<<< HEAD
 //vowel remover
 // remove all lowercase vowels in a given string
 function shortcut(string){
@@ -770,4 +771,30 @@ function shortcut(string){
     result += char;    
   }
   return result;
+=======
+const quarterOf = (month) => {
+  if (month <= 3) return 1;
+  if (month <= 6) return 2;
+  if (month <= 9) return 3;
+  if (month <= 12) return 4;
+}
+
+// L1: Bartender, drinks!
+function getDrinkByProfession(param){
+  let person = param.toLowerCase(); 
+  let options = {
+    jabroni: "Patron Tequila",
+    "school counselor": "Anything with Alcohol",
+    programmer: "Hipster Craft Beer",
+    "bike gang member": "Moonshine",
+    politician: "Your tax dollars",
+    rapper: "Cristal"
+  }
+  return options[person] || "Beer";
+}
+
+//Reversing words in a string. 
+function reverse(string){
+  return string.trim().split(' ').reverse().join(' ');
+>>>>>>> 494a32e8eb520404f23835b90eb6c679f09e6889
 }
