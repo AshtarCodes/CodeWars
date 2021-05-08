@@ -758,20 +758,6 @@ function superSize(num){
   return Number(String(num).split('').sort((a,b) => b - a).join(''));
 }
 
-<<<<<<< HEAD
-//vowel remover
-// remove all lowercase vowels in a given string
-function shortcut(string){
-  const vowels = ['a','e','i', 'o', 'u'];
-  let result;
-  for (let char of string){
-    if (vowels.includes(char)){
-      continue;
-    }
-    result += char;    
-  }
-  return result;
-=======
 const quarterOf = (month) => {
   if (month <= 3) return 1;
   if (month <= 6) return 2;
@@ -796,5 +782,23 @@ function getDrinkByProfession(param){
 //Reversing words in a string. 
 function reverse(string){
   return string.trim().split(' ').reverse().join(' ');
->>>>>>> 494a32e8eb520404f23835b90eb6c679f09e6889
+}
+
+//vowel remover
+// remove all lowercase vowels in a given string
+function shortcut(string){
+  const vowels = ['a','e','i', 'o', 'u'];
+  let result;
+  for (let char of string){
+    if (vowels.includes(char)){
+      continue;
+    }
+    result += char;    
+  }
+  return result;
+}
+//solution 2
+function shortcut(string) {
+  const vowels = ['a','e','i', 'o', 'u'];
+  return string.split('').filter( x => vowels.includes(x) ? '' : x ).join('');
 }
