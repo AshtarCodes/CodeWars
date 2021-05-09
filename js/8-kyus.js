@@ -778,3 +778,8 @@ function getDrinkByProfession(param){
   }
   return options[person] || "Beer";
 }
+
+//Reversing words in a string. 
+function reverse(string){
+  return string.trim().split(' ').reverse().join(' ');
+}
