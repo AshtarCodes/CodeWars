@@ -759,9 +759,22 @@ function superSize(num){
 }
 
 const quarterOf = (month) => {
-  // Your code here
   if (month <= 3) return 1;
   if (month <= 6) return 2;
   if (month <= 9) return 3;
   if (month <= 12) return 4;
+}
+
+// L1: Bartender, drinks!
+function getDrinkByProfession(param){
+  let person = param.toLowerCase(); 
+  let options = {
+    jabroni: "Patron Tequila",
+    "school counselor": "Anything with Alcohol",
+    programmer: "Hipster Craft Beer",
+    "bike gang member": "Moonshine",
+    politician: "Your tax dollars",
+    rapper: "Cristal"
+  }
+  return options[person] || "Beer";
 }
