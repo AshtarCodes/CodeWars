@@ -147,3 +147,14 @@ function getMiddle(s){
     return s.charAt(middle) + s.charAt(middle + 1);
   }
 }
+
+// filter the number
+var FilterString = function(value) {
+  //Complete this function :)
+  let input = value.split('')
+  let res = '';
+  for (let el of input){
+    res += Number.isInteger(parseInt(el)) ? el : '';
+  }
+  return Number(res);
+}
