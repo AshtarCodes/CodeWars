@@ -137,3 +137,13 @@ function sum(){
     if (Array.isArray(array) && (array[0] === 0 || array[0] == null)) return 'even';
     return array.reduce((acc, n) => acc + n, 0) % 2 === 0 ? 'even' : 'odd';
   }
+
+// round up if odd, if eveen get that char and 1 more
+function getMiddle(s){
+  let middle = s.length / 2 - 1;
+  if (s.length % 2 === 1){
+    return s.charAt(Math.ceil(middle));
+  } else if (s.length % 2 === 0) {
+    return s.charAt(middle) + s.charAt(middle + 1);
+  }
+}
