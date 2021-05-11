@@ -802,3 +802,8 @@ function shortcut(string) {
   const vowels = ['a','e','i', 'o', 'u'];
   return string.split('').filter( x => vowels.includes(x) ? '' : x ).join('');
 }
+
+function apple(x){
+  let n = Math.pow(Number(x), 2);
+  return (n > 1000) ? 'It\'s hotter than the sun!!' : 'Help yourself to a honeycomb Yorkie for the glovebox.';
+}
