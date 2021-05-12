@@ -807,3 +807,12 @@ function apple(x){
   let n = Math.pow(Number(x), 2);
   return (n > 1000) ? 'It\'s hotter than the sun!!' : 'Help yourself to a honeycomb Yorkie for the glovebox.';
 }
+
+// in: arr, return: string w/o 0 and last index. 
+function array(str){
+  let arr = str.split(',')
+  if (arr.length < 3) return null;
+  arr.pop();
+  arr.shift();
+  return arr.join(' ');
+}
