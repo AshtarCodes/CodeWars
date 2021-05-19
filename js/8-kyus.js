@@ -920,4 +920,20 @@ function addLength(str) {
   return str.split(' ').map((word) => word + ` ${word.length}`);  
 }
 
+//Name Shuffler
+function nameShuffler(str){
+  return str.split(' ').reverse().join(' ');
+}
 
+// Holiday VI - Shark Pontoon
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
+  let sharkVelocity = (dolphin) ? (sharkSpeed / 2) : sharkSpeed;
+  let myTimeInSeconds = pontoonDistance / youSpeed;
+  let sharkTimeInSeconds = sharkDistance / sharkVelocity;
+  return (myTimeInSeconds > sharkTimeInSeconds) ? 'Shark Bait!' : 'Alive!';
+}
+
+function isLockNessMonster(s) {
+  let phrase = /tree fiddy|3.50|three fifty/;
+  return s.match(phrase);
+}
