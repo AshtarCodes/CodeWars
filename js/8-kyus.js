@@ -937,3 +937,8 @@ function isLockNessMonster(s) {
   let phrase = /tree fiddy|3.50|three fifty/;
   return s.match(phrase);
 }
+
+//Keep up the hoop
+function hoopCount (n) {
+  return n >= 10 ? "Great, now move on to tricks" : "Keep at it until you get it";  
+}
