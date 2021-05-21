@@ -947,3 +947,8 @@ function hoopCount (n) {
 function divide(weight){
   return weight > 3 && !(weight % 2);
 }
+
+//how many lightsabers do you own?
+function howManyLightsabersDoYouOwn(name = 0) {
+  return name === 'Zach' ? 18 : 0;
+}
