@@ -937,3 +937,8 @@ function isLockNessMonster(s) {
   let phrase = /tree fiddy|3.50|three fifty/;
   return s.match(phrase);
 }
+
+// parse int from char
+function getAge(inputString){
+  return parseInt(inputString);
+}
