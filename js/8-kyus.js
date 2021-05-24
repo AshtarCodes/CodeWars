@@ -969,3 +969,13 @@ function switchItUp(number){
 
   return numberInText[number];
 }
+
+//is it even?
+function testEven(n) {
+  return n % 2 === 0;
+}
+
+// say hello
+function sayHello(name) {
+  return 'Hello, ' + name;
+}
