@@ -980,3 +980,14 @@ function sayHello(name) {
   return 'Hello, ' + name;
 }
 
+function mergeArrays(arr1, arr2) {
+  if(arr1.length == 0 && arr2.length == 0) return [];
+  
+  let result = arr1.slice();
+  for (let n of arr2.slice()){
+    if(!result.includes(n)){
+      result.push(n)
+    }
+  }
+  return result.sort((a, b) => a - b);
+}
