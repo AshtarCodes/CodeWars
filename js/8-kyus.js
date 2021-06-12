@@ -991,3 +991,20 @@ function mergeArrays(arr1, arr2) {
   }
   return result.sort((a, b) => a - b);
 }
+
+//Correct the mistakes of the character recognition software
+function correct(string){
+  let options = {
+    5: 'S',
+    0: 'O',
+    1: 'I'
+  }
+  let result = '';
+  for (let char of string){
+    if(options[char]){
+      char = options[char]
+    }
+    result += char;
+  }
+  return result;
+};
