@@ -163,3 +163,10 @@ var FilterString = function(value) {
 function isolateIt(arr){
   return arr.map(s=>s.slice(0,s.length/2)+"|"+s.slice(-s.length/2));
 }
+
+// 
+function highAndLow(numbers){
+  const max = Math.max(...numbers.split(' ').map(n => Number(n)))
+  const min = Math.min(...numbers.split(' ').map(n => Number(n)))
+  return `${max} ${min}`;
+}
