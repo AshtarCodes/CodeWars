@@ -170,3 +170,23 @@ function highAndLow(numbers){
   const min = Math.min(...numbers.split(' ').map(n => Number(n)))
   return `${max} ${min}`;
 }
+
+//You're a square!
+// Given an integral number, determine if it's a square number:
+var isSquare = function(n){
+  return Number.isInteger(Math.sqrt(n))
+}
+
+function descendingOrder(n){
+  let result = Number(String(n).split('').sort((a,b) => Number(b)-Number(a)).join(''));
+  return result;
+}
+
+// Mumbling
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+function accum(s) {
+  let result = Array.from(s).map((c, i, arr) => {   
+      return c.slice().toUpperCase() + c.toLowerCase().repeat(i)    
+  }).join('-')
+  return result;	
+}
