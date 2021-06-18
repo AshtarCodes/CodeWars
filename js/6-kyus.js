@@ -29,3 +29,32 @@ return list.filter((dev) => {
 
 }
 
+// check if array values have the same frequency
+function same (arr1, arr2){
+    let result;
+    arr1 = arr1.reduce((acc,c) => {
+        if(!acc[c]){
+            acc[c] = 0
+        }
+        acc[c] += 1
+
+        return acc;
+    }, {});
+    arr2 = arr2.reduce((acc,c)=> {
+        if (!acc[c]){
+         acc[c] = 0   
+        }
+        acc[c] += 1
+        return acc;
+    },{});
+
+    for (let val in arr1){
+        if (!(arr2[val**2])){
+            return false;
+        }
+        if(arr1[val] !== arr2[val**2]){
+            return false;            
+        }        
+    }
+    return true;
+};
