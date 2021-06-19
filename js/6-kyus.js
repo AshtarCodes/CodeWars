@@ -94,3 +94,39 @@ function validAnagram(str1, str2){
     }
     return true;
 };
+
+// Given two positive integers, determine if the frequency of each digit is the same. 
+function sameFrequency(a,b){
+    
+    a = Array.from(String(a))
+    b = Array.from(String(b))
+    
+    if(a.length !== b.length) return false;
+    
+    a = a.reduce((acc,c)=>{
+       if(!acc[c]){
+           acc[c] = 0
+       }
+       acc[c] += 1;
+       return acc;
+    },{})
+    
+    b = b.reduce((acc,c)=>{
+       if(!acc[c]){
+           acc[c] = 0
+       }
+       acc[c] += 1;
+       return acc;
+    },{});
+    
+    // check if value exists in other; check if frequency of values is the same
+    for (let val in a){
+        if(!(val in b)){
+            return false;
+        }
+        if(a[val] !== b[val]){
+            return false;
+        }
+    }
+    return true;
+  }
