@@ -58,3 +58,39 @@ function same (arr1, arr2){
     }
     return true;
 };
+
+// check if valid anagram
+function validAnagram(str1, str2){
+    if(str1.length !== str2.length){
+        return false;
+    }
+    // first count
+    let a1 = str1.split('').reduce((acc,c) => {
+        if(!acc[c]){
+            acc[c] = 0;
+        }
+        acc[c] += 1;
+        return acc;
+    }, {})
+    // second count
+    let a2 = str2.split('').reduce((acc,c) => {
+        if(!acc[c]){
+            acc[c] = 0;
+        }
+        acc[c] += 1;
+        return acc;
+    }, {})
+    
+    //check if value and frequencies of values are equal
+    for (let val in a1){
+        // if this char does not exist in 2nd string
+        if(!(val in a2)){
+            return false;
+        }
+        // if the frequencies of both chars don't match
+        if((a1[val] !== a2[val])){
+            return false;
+        }
+    }
+    return true;
+};
