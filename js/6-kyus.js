@@ -130,3 +130,20 @@ function sameFrequency(a,b){
     }
     return true;
   }
+
+  // count unique values
+  let arr = [1,1,1,2,2,3,3,4,4,4,4,5,5,6,6,7,8,8,8,8]
+// i and j. if unequal, increment i and set it to value of j. then increment j. if equal, just increment j. until end of loop. then return index of i + 1 to return a count. 
+function countUniqueValues(arr){
+    if(!arr.length){
+        return 0;
+    }
+    let i = 0
+    for (let j=1; j < arr.length; j++){
+        if(arr[i] !== arr[j]){
+            i++
+            arr[i] = arr[j];
+        }         
+    }
+    return i + 1;
+}
