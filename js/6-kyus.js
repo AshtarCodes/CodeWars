@@ -147,3 +147,22 @@ function countUniqueValues(arr){
     }
     return i + 1;
 }
+
+// Are there duplicates
+// P: several arguments; R: true if duplicates among args; E: 1,3,5,3,'a','b' -> true 
+// frequency counter: 
+// Ps: group args by identity and count frequency. if any are greater than 1, return true 
+function areThereDuplicates(args){
+    let itemFrequency = [...args].reduce((acc,c) => {
+        if(!acc[c]){
+            acc[c] = 0;
+        }
+        acc[c] += 1;
+        return acc;
+    }, {});
+
+    for(let item in itemFrequency){
+        if(itemFrequency[item] > 1) return false;
+    }
+    return true;    
+}
