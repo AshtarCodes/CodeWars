@@ -181,3 +181,25 @@ function isSubsequence(s1, s2) {
     }
     return false;
 }
+
+//maxSubarraySum([100,200,300,400], 2) // returns 700
+
+function maxSubarraySum(arr, window){
+    if(window > arr.length) return null;
+
+    let tempSum = 0;
+    let maxSum = 0;
+    
+    for (let i = 0; i < window; i++){
+        maxSum += arr[i]
+    }
+
+    tempSum = maxSum;
+
+    for(let j = window; j < arr.length; j++){
+        tempSum = tempSum - arr[j - window] + arr[j];
+        maxSum = Math.max(maxSum, tempSum)
+    }
+
+    return maxSum;
+}
