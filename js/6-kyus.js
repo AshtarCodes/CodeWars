@@ -222,4 +222,83 @@ function likes (names) {
     } else if (names.length < 1){
       return `no one likes this`;
     }
-  }
+}
+
+/* Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits. 
+*/
+function duplicateCount(text){
+    let count = 0;
+    text = text.split('').reduce((acc,c) => {
+      if(typeof c == 'string'){
+        c = c.toLowerCase();
+      }
+      if(!acc[c]){
+        acc[c] = 0;
+      }
+      acc[c]++;
+      return acc;
+    },{})
+    
+    for (let c in text){
+      if(text[c] > 1){
+        count++;
+      }
+    }
+    return count;
+}
+
+/* 
+Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (like the name of this kata).
+*/
+function spinWords(string){
+    return string.split(' ').map(el => (el.length >= 5) ? el.split('').reverse().join('') : el).join(' ');
+}
+
+/*Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+It should remove all values from list a, which are present in list b keeping their order.
+*/
+function arrayDiff(a, b) {
+    if(a.length && a.length < 1) return [];
+    
+    return a.filter((el, i, arr) => !b.includes(el));
+}
+
+/*
+You have function with one side of the DNA (string, except for Haskell); you need to get the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+*/
+function DNAStrand(dna){
+    let complement = {
+      A:'T',
+      T:'A',
+      G:'C',
+      C:'G'
+    }
+    
+    let result = "";
+    
+    for (let s of dna){
+      if(complement[s]){
+        result += complement[s];
+      }
+    }
+    return result;
+}
+
+//
+function isIsogram(str){
+    if(str.length < 1) return true;
+    
+    let lookup = {};
+    
+    for (let c of str){
+      c = c.toLowerCase();
+      if (c in lookup){
+        return false;
+      }
+      if(!lookup[c]){
+        lookup[c] = 0;
+      }
+      lookup[c]++
+    }
+    return true;
+}
