@@ -203,3 +203,23 @@ function maxSubarraySum(arr, window){
 
     return maxSum;
 }
+
+//Who likes it? 
+//Implement a function likes :: [String] -> String, which must take in input array, containing the names of people who like an item
+function likes (names) {
+    if(names.length> 4){
+      let [one, two, ...rest] = names;
+      return `${one}, ${two}, and ${names.length - 2} others like this`;
+    } else if (names.length === 3) {
+      let [one, two, three, ...rest] = names;
+      return `${one}, ${two}, and ${three} like this`;
+    } else if(names.length === 2){
+      let [one, two] = names;
+      return `${one} and ${two} like this`;
+    } else if(names.length === 1){
+      let [one] = names;
+      return `${one} likes this`;
+    } else if (names.length < 1){
+      return `no one likes this`;
+    }
+  }

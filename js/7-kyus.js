@@ -191,3 +191,37 @@ function accum(s) {
   return result;	
 }
 
+function disemvowel(str) {
+  const vowels = {
+    a: 
+    b,
+    c,
+    d,
+    e,
+  }
+  let result = ""
+  for (let c of str){       
+    if(!vowels[c] || !(c.toLowerCase() in vowels)){
+      result += c
+    }
+  }
+  return result;
+};
+
+function likes (names) {
+  if(names.length> 4){
+    let [one, two, ...rest] = names;
+    return `${one}, ${two}, and ${names.length - 2} others like this`;
+  } else if (names.length === 3) {
+    let [one, two, three, ...rest] = names;
+    return `${one}, ${two}, and ${three} like this`;
+  } else if(names.length === 2){
+    let [one, two] = names;
+    return `${one} and ${two} like this`;
+  } else if(names.length === 1){
+    let [one] = names;
+    return `${one} likes this`;
+  } else if (names.length < 1){
+    return `no one likes this`;
+  }
+}
