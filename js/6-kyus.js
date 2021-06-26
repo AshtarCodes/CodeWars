@@ -302,3 +302,38 @@ function isIsogram(str){
     }
     return true;
 }
+
+/*
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+*/
+function solution (n) {
+    let sum = 0;
+
+    for (let i = 0; i < n; i++){
+        if (i % 3 === 0 || i % 5 === 0){
+            sum += i;
+        }
+    }
+    return sum;
+}
+
+/* Given an array of integers, find the one that appears an odd number of times.
+ There will always be only one integer that appears an odd number of times.
+*/
+function findOdd(A) {
+    let counter = A.reduce((acc,c) => {
+      if(!acc[c]){
+        acc[c] = 0
+      }
+      acc[c]++;
+      return acc;
+    }, {});
+    
+    for (let n in counter){
+      if(counter[n] % 2){
+        return Number(n);
+      }
+    }
+};
+
