@@ -355,3 +355,48 @@ function findShort(s){
 function findShort (s) {
   return Math.min(...s.split(' ').map(el => el.length));
 }
+
+//Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number. You can guarantee that input is non-negative.
+const countBits = function(n) {
+  let bin = Array.from(Number(n).toString(2));
+  return bin.reduce((acc,c) => {
+    return acc + Number(c);
+  }, 0)
+};
+
+// Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+function XO(str) {
+  if (str.length < 1) return true;
+  let count = str.toLowerCase().split('').reduce((acc,c) => {
+    if(!acc[c]){
+      acc[c] = 0;
+    }
+    acc[c]++;
+    return acc;
+  },{});
+
+  if ('x' in count && 'o' in count){
+    if(count['x'] === count['o']){
+      return true;
+    }
+  }
+  return false;
+};
+
+// You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
+// [2,4,6,7,8] -> 7
+function findOutlier(n){
+  let even = n.filter(n => n % 2 == 0);
+  let odd = n.filter(n => n % 2 !== 0);
+  
+  if(even.length > odd.length){
+    return odd[0];
+  } else {
+    return even[0];
+  }
+};
+
+//In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+function filter_list(l) {
+  return l.filter(el => typeof el === 'number');
+}
