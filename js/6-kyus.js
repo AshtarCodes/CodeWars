@@ -337,3 +337,21 @@ function findOdd(A) {
     }
 };
 
+// Simple, given a string of words, return the length of the shortest word(s).
+// solution 1
+function findShort(s){
+  let words = s.split(' ');
+  let min = words[0].length;
+  for (let word of words){
+    let length = word.length;
+    if(length < min){
+      min = length;
+    }
+  }
+  return min;
+}
+
+// solution 2
+function findShort (s) {
+  return Math.min(...s.split(' ').map(el => el.length));
+}
