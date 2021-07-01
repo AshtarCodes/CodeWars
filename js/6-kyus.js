@@ -424,3 +424,38 @@ function duplicateEncode(word){
   }
   return result;
 };
+
+// Dubstep. The input consists of a single non-empty string, consisting only of uppercase English letters. May have 'WUB' in between any words. Return only the words of the original song. 
+function songDecoder(song){
+  return song.split('WUB').filter(el => el.trim() != '').join(' ');
+}
+
+/*
+Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+
+Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+*/
+// loop through each word. if a word contains a number from 1-9, assign it to a new array at an index of (number - 1). 
+function order(words){
+  if(words.length < 1) return '';
+
+  let nums = '123456789'.split('');
+  let sorted = [];
+
+  for (let word of words.split(' ')){
+    
+    if (word.length > 1){
+      for (let c of word){
+        // if c is a num 1-9
+        if(nums[c]){
+          sorted[c - 1] = word;
+        }
+      }
+    } else {
+      sorted[word - 1] = word;
+    }
+  };
+
+  return sorted.join(' ').trim();
+}
