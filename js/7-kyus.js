@@ -225,3 +225,53 @@ function likes (names) {
     return `no one likes this`;
   }
 }
+
+// Your task is to write a function maskify, which changes all but the last four characters into '#'.
+function maskify(cc) {
+  let end = cc.slice(-4);
+  let masked = cc.split('').map(x => '#').join('').slice(0,-4);
+  return masked + end;
+}
+
+//In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+// If anything in the text isn't a letter, ignore it and don't return it.
+
+function alphabetPosition(text) {
+  let result = "";
+
+  let alphabet = {
+    a: '1',
+    b: '2',
+    c: '3',
+    d: '4',
+    e: '5',
+    f: '6',
+    g: '7',
+    h: '8',
+    i: '9',
+    j: '10',
+    k: '11',
+    l: '12',
+    m: '13',
+    n: '14',
+    o: '15',
+    p: '16',
+    q: '17',
+    r: '18',
+    s: '19',
+    t: '20',
+    u: '21',
+    v: '22',
+    w: '23',
+    x: '24',
+    y: '25',
+    z: '26'
+  }
+
+  for (let c of text.toLowerCase()){
+    if (alphabet[c]){
+      result += alphabet[c] + ' ';
+    }
+  }
+  return result.trim();
+}
