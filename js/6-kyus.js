@@ -499,3 +499,55 @@ function isPangram(string){
 }
 console.log(isPangram('husky'), false);
 console.log(isPangram('abcdefghijklmnopqrstuvwxyz'), true);
+
+/*
+Given: an array containing hashes of names
+Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
+*/
+function list(names){
+  if (names.length < 1) return [];
+  return names.reduce((str, obj, i, arr) => {
+    let name = obj.name;
+
+    if(arr.length >= 2 && arr[i] === arr[arr.length - 1]){
+      str += `& ${name}`;
+    } else if (arr[i] === arr[arr.length - 2]){
+      str += `${name} `;
+    } else if (arr.length === 1) {
+      str += `${name}`;
+    } else {
+      str += `${name}, `;
+    };
+    return str;
+  }, "")  
+}
+
+console.log(list([{name: Bart}, {name: Lisa}, {name: Maggie}]), 'Bart, Lisa & Maggie');
+console.log(list([{name: Bart}, {name: Lisa}]), 'Bart & Lisa');
+
+/* 
+ Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+*/
+
+function solution(str){
+   let res = [];
+   if (str.length < 1) return res;
+
+   let temp = '';
+   for (let i = 0; i < str.length; i += 2){
+    if (i === str.length - 1){
+      temp += str.charAt(i) + '_'; 
+    } else {
+      temp += str.substr(i, 2);
+    }
+    res.push(temp);
+    temp = '' 
+   }
+
+   return res;
+}
+
+console.log(solution('abc'), ['ab', 'c_']);
+console.log(solution('abcdef'), ['ab', 'cd', 'ef']);
+
+
