@@ -550,4 +550,19 @@ function solution(str){
 console.log(solution('abc'), ['ab', 'c_']);
 console.log(solution('abcdef'), ['ab', 'cd', 'ef']);
 
+/* 
+Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+*/
+function digital_root(n) {
+  if (Number(n) < 10){
+    return Number(n);
+  };
+  
+  n = Number(String(n).split('').reduce((acc, c) => Number(acc) + Number(c), 0))
+  
+  return digital_root(n);
+}
 
+console.log(digital_root(450), 9);
+console.log(digital_root(45), 9);
+console.log(digital_root(45), 5);
