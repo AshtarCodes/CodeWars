@@ -516,13 +516,10 @@ function generateColor () {
   switch (true){
     case (generate < 0.25):
         return 'yellow';
-        break;
     case (generate < 0.5):
         return 'white';
-        break;
     case (generate < 0.75):
         return 'purple';
-        break;
     default:
         return 'red';
   };
@@ -1008,3 +1005,8 @@ function correct(string){
   }
   return result;
 };
+
+// sum mixed arr values -> [1, '1', '3', 4, '7']
+function sumMix(x){
+  return x.reduce((acc,c) => acc + Number(c), 0);
+}
