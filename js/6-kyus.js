@@ -522,8 +522,8 @@ function list(names){
   }, "")  
 }
 
-console.log(list([{name: Bart}, {name: Lisa}, {name: Maggie}]), 'Bart, Lisa & Maggie');
-console.log(list([{name: Bart}, {name: Lisa}]), 'Bart & Lisa');
+console.log(list([{name: 'Bart'}, {name: 'Lisa'}, {name: 'Maggie'}]), 'Bart, Lisa & Maggie');
+console.log(list([{name: 'Bart'}, {name: 'Lisa'}]), 'Bart & Lisa');
 
 /* 
  Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
@@ -577,3 +577,41 @@ function solve(arr) {
 console.log([[1,2],[4],[5,6]], 4);
 console.log([[1,2],[4,4],[5,6,6]], 4);
 console.log([[1,2],[3,4],[5,6]], 8);
+
+// Anagram
+// get a count of unique letters in the word. Then get a count of unique letters in each arr element and compare it. if counts are equal, push el to new arr. return new arr. 
+function anagrams(word, words) {
+  if (!word.length || !words.length) return [];
+
+  function reduceIntoCount (str) {
+    return str.split('').reduce((acc,c)=> {
+      if (!acc[c]) acc[c] = 0;
+      acc[c]++
+      return acc;
+    }, {})    
+  }
+  let result = [];
+  let wordCount = reduceIntoCount(word);
+
+  const countArr = words.map(el => reduceIntoCount(el));
+
+  for (let i = 0; i < countArr.length; i++){
+    let localCount = countArr[i];
+    let match;
+    for (let el in localCount){
+      if (el in wordCount && localCount[el] === wordCount[el]){
+        match = true;
+      } else {
+        match = false;
+        break;
+      }
+    }
+    if (match){
+      result.push(words[i]);
+    }
+  }
+
+  return result; 
+}
+
+console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']), ['aabb', 'bbaa']);
