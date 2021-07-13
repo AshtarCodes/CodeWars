@@ -280,3 +280,8 @@ function alphabetPosition(text) {
 function repeats(arr){
   return arr.filter((el,i,arr) => arr.indexOf(el) === arr.lastIndexOf(el)).reduce((acc,c) => acc + c, 0);
 };
+
+/* Your task is to remove all consecutive duplicate words from a string, leaving only first words entries.  */
+const removeConsecutiveDuplicates = s => s.split(' ').filter((el, i, arr) => el !== arr[i + 1]).join(' ');
+
+console.log(removeConsecutiveDuplicates("alpha beta beta gamma gamma"), 'alpha beta gamma');
