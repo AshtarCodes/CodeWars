@@ -652,3 +652,11 @@ function inArray(arr1,arr2){
   return [...new Set(result)];
 };
 console.log(inArray(["arp", "live", "strong"],["lively", "alive", "harp", "sharp", "armstrong"]), ["arp", "live", "strong"]);
+
+/* In this Kata, you will sort elements in an array by decreasing frequency of elements. If two elements have the same frequency, sort them by increasing value.  */
+function solve(arr){
+  let dict = arr.reduce((acc,c) => ((acc[c] = acc[c] + 1 || 1),acc) ,{});
+  return arr.sort((a,b) => dict[b] - dict[a] || a - b);
+}
+
+console.log(solve([2,3,5,3,7,9,5,3,7]), [3,3,3,5,5,7,7,2,9]);
