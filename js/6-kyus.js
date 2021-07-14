@@ -634,3 +634,21 @@ function isValidWalk(walk) {
 };
 console.log(isValidWalk(['n','s','n','s']), true);
 console.log(isValidWalk(['n']), false);
+
+/* Given two arrays of strings a1 and a2 return a sorted array r in lexicographical order of the strings of a1 which are substrings of strings of a2. */
+function inArray(arr1,arr2){
+  let result = [];
+  if (arr1.length < 1 || arr2.length < 1) return result;
+  
+  for (let i = 0; i < arr2.length; i++){
+    let testing = arr2[i];
+    for (let str of arr1){
+      if(testing.includes(String(str))){
+        result.push(str);
+      }
+    }
+  }
+  result = result.sort((a,b) => a > b ? 1 : -1);
+  return [...new Set(result)];
+};
+console.log(inArray(["arp", "live", "strong"],["lively", "alive", "harp", "sharp", "armstrong"]), ["arp", "live", "strong"]);
