@@ -660,3 +660,14 @@ function solve(arr){
 }
 
 console.log(solve([2,3,5,3,7,9,5,3,7]), [3,3,3,5,5,7,7,2,9]);
+
+function iqTest(numbers){
+  let nums = numbers.split(' ').filter(el => el !== '' || el !== ' ').map(el => Number(el));
+  let even = nums.filter(el => el % 2 === 0).length
+  let odd = nums.filter(el => el % 2 !== 0).length
+  if (even > odd){
+    return nums.findIndex(el => el % 2 !== 0) + 1;
+  } else {
+    return nums.findIndex(el => el % 2 === 0) + 1;
+  };
+}
