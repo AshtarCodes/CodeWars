@@ -285,3 +285,8 @@ function repeats(arr){
 const removeConsecutiveDuplicates = s => s.split(' ').filter((el, i, arr) => el !== arr[i + 1]).join(' ');
 
 console.log(removeConsecutiveDuplicates("alpha beta beta gamma gamma"), 'alpha beta gamma');
+
+// String ends with
+function solution(str, ending){
+  return str.endsWith(ending);
+}
