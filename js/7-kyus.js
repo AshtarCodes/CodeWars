@@ -307,3 +307,12 @@ function twoOldestAges(ages){
   return ages.sort((a,b) => a - b).slice(-2)
 }
 
+/* Find the capitals
+Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string. */
+var capitals = function (word) {
+	const isUpperCase = (el) => el === el.toUpperCase();
+  return word.split('').reduce((acc,c,i) => {
+    if (isUpperCase(c)) acc.push(i);
+    return acc;
+  } ,[])
+};
