@@ -262,6 +262,20 @@ function arrayDiff(a, b) {
     
     return a.filter((el, i, arr) => !b.includes(el));
 }
+// solution 2 for arrayDiff
+function arrayDiff(a, b) {
+  let output  = [];
+  if (a && a.length < 1) return [];
+  
+  const lookup = b.reduce((acc,c) => (acc[c] = (acc[c]++ || 1), acc),{});
+  
+  for (let el of a){
+    if(!(el in lookup)){
+      output.push(el);
+    }
+  }
+  return output;
+}
 
 /*
 You have function with one side of the DNA (string, except for Haskell); you need to get the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
