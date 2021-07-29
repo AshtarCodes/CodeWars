@@ -685,3 +685,9 @@ function iqTest(numbers){
     return nums.findIndex(el => el % 2 === 0) + 1;
   };
 }
+/* Sort the odd */
+function sortArray(arr) {
+  let odd = arr.filter(x => x % 2).sort((a,b) => a - b);
+  let output = arr.map(el => (el % 2) ? odd.shift() : el );
+  return output; 
+}
