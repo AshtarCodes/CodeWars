@@ -691,3 +691,14 @@ function sortArray(arr) {
   let output = arr.map(el => (el % 2) ? odd.shift() : el );
   return output; 
 }
+
+/* String Array Duplicates */
+function dup(arr) {
+  let output = []
+  let str;
+  for (let s of arr){
+    str = s.split('').filter((el,i,a) => el !== a[i+1]).join('')
+    output.push(str)
+  }
+  return output;
+};
