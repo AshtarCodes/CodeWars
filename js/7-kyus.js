@@ -336,3 +336,49 @@ Note: N may be 1 or less (in the latter case, the first array will be []). */
 function findDeletedNumber(arr, mixArr) {
   return arr.filter(x => !mixArr.includes(x))[0] || 0;
 }
+
+/* Disemvowel Trolls: Your task is to write a function that takes a string and return a new string with all vowels removed.
+For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!". */
+function disemvowel(str) {
+  let result = ""
+  for (let c of str){       
+     if(!vowels[c.toLowerCase()]){
+       result += c
+     }
+  }
+  return result;
+};
+
+const vowels = {
+a: true, 
+e: true,
+i: true,
+o: true,
+u: true,
+}
+
+/* Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
+Note: a and b are not ordered! */
+function getSum( a,b ){
+  let sum = 0;
+ let max = Math.max(a,b);
+ let min = Math.min(a,b)
+ 
+ for (let i = min; i <= max; i++){
+   sum += i;
+ }
+ return sum;
+}
+/* Growth of a population: In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater or equal to p = 1200 inhabitants? */
+function nbYear(p0, percent, aug, p) {
+  let years = 0;
+let pct = percent > 0 ? percent/100 : 0;
+let pop = p0;
+while(pop < p){
+  pop += (pop * pct) + aug;
+  years++;    
+}
+return years;
+}
+
+/*  */

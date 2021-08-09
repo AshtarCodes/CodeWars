@@ -702,3 +702,43 @@ function dup(arr) {
   }
   return output;
 };
+
+/*  Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit. */
+function persistence(num) {
+  let output = String(num).split('').reduce((acc,c) => acc * Number(c))
+  
+  return String(num).length > 1 
+    ? 1 + persistence(output)
+    : 0;  
+}
+
+/* Unique in order: Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements. */
+var uniqueInOrder= (itr) => {
+  let output = Array.from(itr).filter((el, i, arr) => el !== arr[i+1]);
+  return output;
+}
+
+/* Tribonnacci sequence */
+function tribonacci(signature,n){
+  if(!Array.isArray(signature) || signature.length && signature.length < 1) return [];
+  if (n === 0) return [];
+  if (n < signature.length) return signature.splice(0,n);
+  let arr = signature.slice();
+  
+  let window = 0;
+  for (let i = 0; i < arr.length; i++){
+    window += arr[i];
+  }
+
+  let next = window;
+  let start = 0;
+  let end = arr.length - 1;
+  while(arr.length < n){
+    arr.push(next);
+    next = (next - arr[start]) + arr[arr.length - 1];
+    start++;
+  }
+  return arr;
+};
+
+/*  */
