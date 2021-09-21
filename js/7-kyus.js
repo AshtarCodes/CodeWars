@@ -381,4 +381,44 @@ while(pop < p){
 return years;
 }
 
-/*  */
+/* Count the number of JavaScript developers coming from Europe */
+const euroDevs = (list) => {
+  return list.filter(dev => dev.continent === 'Europe' && dev.language === 'JavaScript').length;
+};
+
+/* Greet developers */
+function heyDevs (list) {
+  return list.map(dev => {
+    dev.greeting = `Hi ${dev.firstName}, what do you like the most about ${dev.language}?`;
+    return dev;
+  })
+};
+
+/* Is Ruby coming? */
+function whereRubyAt (list) {
+  return list.some(dev => dev.language === 'Ruby');
+};
+
+/* Find the first python dev */
+function getSnake (list) {
+  const python = list.find(dev => dev.language === 'Python');
+  return python ? `${python.firstName}, ${python.country}` : 'There will be no Python developers';
+};
+
+/* Count of languages */
+const countLangs = (list) => {
+  return list.reduce((acc,c) => {
+    const l = c.language; 
+    if (!acc[l]) {
+      acc[l] = 0;
+    }
+    acc[l]++;
+    return acc;
+  }, {})
+};
+
+/* Can they code in the same language */
+function SameLang (list) {
+  const language = list[0].language;
+  return list.every(dev => dev.language === language);
+};
