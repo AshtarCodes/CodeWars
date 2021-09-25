@@ -742,3 +742,12 @@ function tribonacci(signature,n){
 };
 
 /*  */
+function eldestDev (list) {
+  const maxAge = list.reduce((acc, {age}) => {
+    if (age > acc){
+      acc = age;
+    }
+    return acc;
+  },0);
+  return list.filter(dev => dev.age === maxAge);
+}
