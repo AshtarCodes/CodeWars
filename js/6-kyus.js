@@ -751,3 +751,27 @@ function eldestDev (list) {
   },0);
   return list.filter(dev => dev.age === maxAge);
 }
+
+function devInEveryCountryCode (list) {
+  const continents = [
+    'Africa',
+    'Americas',
+    'Asia',
+    'Europe',
+    'Oceania'];
+  return continents.every(continent => list.some(dev => dev.continent === continent))
+};
+
+function devInEveryCountryCode2(list) {
+  const continents = ['Africa','Americas','Asia','Europe','Oceania'];
+  const map = list.reduce((acc,{continent}) => {
+    if (!acc[continent]) {
+      acc[continent] = 0
+    };
+    acc[continent]++;
+    return acc;
+  }, {});
+  
+  return continents.every(c => c in map);
+};
+
