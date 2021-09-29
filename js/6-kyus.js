@@ -784,4 +784,4 @@ function newUsername (list) {
     arr[i].username = username;
     return arr[i];
   });
-}
+};
