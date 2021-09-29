@@ -775,3 +775,13 @@ function devInEveryCountryCode2(list) {
   return continents.every(c => c in map);
 };
 
+function newUsername (list) {
+  const date = new Date
+  const year = date.getFullYear();
+  return list.map(({ age, firstName, lastName }, i, arr) => {
+    const birthYear = year - age;
+    const username = `${firstName.toLowerCase()}${lastName.charAt(0).toLowerCase()}${birthYear}`;
+    arr[i].username = username;
+    return arr[i];
+  });
+}
