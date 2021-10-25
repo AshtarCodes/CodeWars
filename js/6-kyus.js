@@ -785,3 +785,26 @@ function newUsername (list) {
     return arr[i];
   });
 };
+
+function queueTime(customers, n) {
+  if (!customers.length) return 0;
+  if(n === 1) return customers.reduce((acc, c) => acc + c);
+
+  let arr = [];
+
+  while (customers.length){
+    let i = 0;
+    let next = customers.shift();
+    let previous = arr[i - 1]  
+    if (n){ //if new process and no element
+      arr.push(next); //fill it
+      n--; // remove an available process
+    } else if(!n){ // if tills are exhausted
+      let min = Math.min(...arr);
+      let indexOfLeastFilled = arr.indexOf(min);
+      arr[indexOfLeastFilled] += next;
+    } 
+  };
+  let max = Math.max(...arr);
+  return max;
+}
