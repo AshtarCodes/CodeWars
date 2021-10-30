@@ -502,3 +502,9 @@ const removeConsecutiveDuplicates = str => {
   let arr = str.split(' ').filter((el, i, arr) => arr[i] !== arr[i + 1])
   return arr.join(' ');
 }
+
+function absentVowel(x){
+  let vowels = 'aeiou'.split('');
+  let arr = x.toLowerCase().split('');
+  return vowels.findIndex(el => !arr.includes(el))
+}
