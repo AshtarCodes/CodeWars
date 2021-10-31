@@ -808,3 +808,13 @@ function queueTime(customers, n) {
   let max = Math.max(...arr);
   return max;
 }
+
+function sortArray(arr) {
+ let odds = arr.filter((el,i) => el % 2).sort((a,b) => a > b ? 1 : -1);
+ arr.forEach((el, i) => {
+   if (el % 2){
+     arr[i] = odds.shift();
+   }
+ })
+ return arr;
+}
