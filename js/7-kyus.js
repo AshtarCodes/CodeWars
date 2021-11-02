@@ -422,3 +422,13 @@ function SameLang (list) {
   const language = list[0].language;
   return list.every(dev => dev.language === language);
 };
+
+function longest(s1, s2) {
+  let str = s1 + s2;
+  let set = new Set();
+  for (let s of str){
+    if (!set.has(s))
+    set.add(s)
+  }; 
+  return Array.from(set).sort((a,b) => a > b ? 1 : -1).join('');
+}
