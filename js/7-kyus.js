@@ -432,3 +432,7 @@ function longest(s1, s2) {
   }; 
   return Array.from(set).sort((a,b) => a > b ? 1 : -1).join('');
 }
+
+function friend(friends){
+  return friends.filter(str => str.split('').length === 4);
+}
