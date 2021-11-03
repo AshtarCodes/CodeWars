@@ -809,6 +809,7 @@ function queueTime(customers, n) {
   return max;
 }
 
+
 function sortArray(arr) {
  let odds = arr.filter((el,i) => el % 2).sort((a,b) => a > b ? 1 : -1);
  arr.forEach((el, i) => {
