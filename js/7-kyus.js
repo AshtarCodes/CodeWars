@@ -436,3 +436,11 @@ function longest(s1, s2) {
 function friend(friends){
   return friends.filter(str => str.split('').length === 4);
 }
+
+function averageLength(list) { 
+  let lengths = list.map(x => Array.from(x).length);
+  let avg = lengths.reduce((acc, c) => acc + c ,0) / lengths.length;
+  avg = Number.isInteger(avg) ? avg : Math.round(avg)
+  
+  return list.map(x => x.length === avg ? x : x.length < avg ? x.charAt(0).repeat(avg) : x.slice(x.length - avg))
+}
