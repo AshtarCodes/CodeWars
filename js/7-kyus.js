@@ -497,3 +497,8 @@ const gimme = (inputArray) => {
   let n = copy[1];
   return inputArray.findIndex(el => el === n );
 };
+// Your task is to remove all consecutive duplicate words from a string, leaving only first words entries. 
+const removeConsecutiveDuplicates = str => {
+  let arr = str.split(' ').filter((el, i, arr) => arr[i] !== arr[i + 1])
+  return arr.join(' ');
+}
