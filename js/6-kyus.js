@@ -819,3 +819,12 @@ function sortArray(arr) {
  })
  return arr;
 }
+/*In this Kata, you will be given an array of strings and your task is to remove all consecutive duplicate letters from each string in the array. */
+function dup(a) {
+  let result = [];
+  for (let s of a) {
+    let str = s.split('').filter((l, ind, arr) => l !== arr[ind+1]).join('')
+    result.push(str)
+  }
+  return result;
+};
