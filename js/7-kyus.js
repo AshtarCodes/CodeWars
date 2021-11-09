@@ -444,3 +444,38 @@ function averageLength(list) {
   
   return list.map(x => x.length === avg ? x : x.length < avg ? x.charAt(0).repeat(avg) : x.slice(x.length - avg))
 }
+
+var isAnagram = function(test, original) {
+  const one = test.toLowerCase().split('').reduce((acc,c) => {
+    if (!acc[c]){
+      acc[c] = 1
+    }
+    acc[c]++
+    return acc;
+  } ,{})
+  const two = original.toLowerCase().split('').reduce((acc,c) => {
+    if (!acc[c]){
+      acc[c] = 1
+    }
+    acc[c]++
+    return acc;
+  } ,{})
+
+  for (const l in two) {
+    if (!(l in one)){
+      return false
+    }
+    if (two[l] !== one[l]){
+      return false
+    }
+  }
+  for (const l in one) {
+    if (!(l in two)){
+      return false
+    }
+    if (one[l] !== two[l]){
+      return false
+    }
+  }
+  return true;
+};
