@@ -445,7 +445,7 @@ function averageLength(list) {
   return list.map(x => x.length === avg ? x : x.length < avg ? x.charAt(0).repeat(avg) : x.slice(x.length - avg))
 }
 
-var isAnagram = function(test, original) {
+const isAnagram = function(test, original) {
   const one = test.toLowerCase().split('').reduce((acc,c) => {
     if (!acc[c]){
       acc[c] = 1
