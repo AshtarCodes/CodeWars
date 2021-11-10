@@ -479,3 +479,7 @@ const isAnagram = function(test, original) {
   }
   return true;
 };
+
+function sortGiftCode(code){
+  return code.split('').sort((a,b) => a > b ? 1 : -1).join('')
+}
