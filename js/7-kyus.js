@@ -483,3 +483,11 @@ const isAnagram = function(test, original) {
 function sortGiftCode(code){
   return code.split('').sort((a,b) => a > b ? 1 : -1).join('')
 }
+
+function solution(pairs){
+  let str = [];
+  for (let key in pairs){
+    str.push(`${key} = ${pairs[key]}`)
+  }
+  return str.join(',')
+}
