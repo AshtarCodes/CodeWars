@@ -485,9 +485,9 @@ function sortGiftCode(code){
 }
 
 function solution(pairs){
-  let str = [];
+  let arr = [];
   for (let key in pairs){
-    str.push(`${key} = ${pairs[key]}`)
+    arr.push(`${key} = ${pairs[key]}`)
   }
-  return str.join(',')
+  return arr.join(',')
 }
