@@ -1010,3 +1010,17 @@ function correct(string){
 function sumMix(x){
   return x.reduce((acc,c) => acc + Number(c), 0);
 }
+
+function multiTable(number) {
+  const str = Array.from('123456789')
+  str.push('10')
+  return str.map(n => `${n} * ${number} = ${n * number}`).join('\n');
+}
+function isPalindrome(line) {
+  return line.split('').reverse().join('') === line;
+}
+
+function shortenToDate(longDate) {
+  const [date, time] = longDate.split(',')
+  return `${date}`
+}
