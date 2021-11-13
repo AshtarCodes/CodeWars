@@ -491,3 +491,9 @@ function solution(pairs){
   }
   return arr.join(',')
 }
+
+const gimme = (inputArray) => {
+  let copy = inputArray.slice(0).sort((a,b) => a - b);
+  let n = copy[1];
+  return inputArray.findIndex(el => el === n );
+};
