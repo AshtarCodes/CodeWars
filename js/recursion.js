@@ -28,7 +28,6 @@ function recursiveRange(num){
 function fibonacci(num) {
      const cache = {};
     function fib(num){
-      // add whatever parameters you deem necessary - good luck!  
       if (num === 2 || num === 1) return 1;
       if (cache[num]) return cache[num];
       let result = fib(num-1) + fib(num-2);
@@ -39,7 +38,6 @@ function fibonacci(num) {
 }
 
 function reverseString(str){
-    // add whatever parameters you deem necessary - good luck!
     if (str === '') return '';
-    return reverse(str.slice(1)) + str[0];
-  }
+    return reverseString(str.slice(1)) + str[0];
+}
