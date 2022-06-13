@@ -41,3 +41,15 @@ function reverseString(str){
     if (str === '') return '';
     return reverseString(str.slice(1)) + str[0];
 }
+
+function isPalindrome(word){
+    if (word === '' || typeof word !== 'string') return false;
+    const original = word;
+    
+    function reverseStr(str){
+        if (str === '') return str;
+        return reverseStr(str.slice(1)) + str[0];
+    }
+    let reversed = reverseStr(word);
+    return original === reversed;
+}
